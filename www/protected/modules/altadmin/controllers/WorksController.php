@@ -1,8 +1,11 @@
 <?php
 
-class WorksController extends Controller
-{
-	public function actionIndex() {
+class WorksController extends Controller {
+
+    /**
+     * Выводит список всех работ
+     */
+    public function actionIndex() {
 
         $model = Works::model()->findAll(array('order' => 'position DESC'));
 
@@ -10,35 +13,35 @@ class WorksController extends Controller
     }
 
     public function actionAdd() {
-        
-        $maxOrderNumber = Yii::app()->db->createCommand()
-  ->select('max(position) as max')
-  ->from('works')
-  ->queryScalar();
 
-$model = new Works;
-        
-        $model->position=$maxOrderNumber+1;
+        $maxOrderNumber = Yii::app()->db->createCommand()
+                ->select('max(position) as max')
+                ->from('works')
+                ->queryScalar();
+
+        $model = new Works;
+
+        $model->position = $maxOrderNumber + 1;
         $model->save();
         if (isset($model->works_id)) {
             Yii::app()->request->redirect('/altadmin/works/edit/' . $model->works_id);
         }
     }
 
-    public function actionEdit($id = 0) {        
+    public function actionEdit($id = 0) {
         $this->pageTitle = 'Редактирование работы | CMS ALTADMIN';
         $model = Works::model()->findByPk($id);
-        $model->scenario='edit';
+        $model->scenario = 'edit';
         $img = $model->img;
         $img_big = $model->img_big;
         if (isset($_POST['Works'])) {
             $model->attributes = $_POST['Works'];
             if ($model->validate()) {
-                
-                $file = CUploadedFile::getInstance($model, 'img');                
+
+                $file = CUploadedFile::getInstance($model, 'img');
                 if (!empty($file->name)) {
-                    if (!empty($img) && file_exists(Yii::getPathOfAlias('webroot') . '/images/works/'.$img)){
-                        unlink(Yii::getPathOfAlias('webroot') . '/images/works/'.$img);
+                    if (!empty($img) && file_exists(Yii::getPathOfAlias('webroot') . '/images/works/' . $img)) {
+                        unlink(Yii::getPathOfAlias('webroot') . '/images/works/' . $img);
                     }
                     $model->img = $id . '_' . $file->name;
                     $file->saveAs(Yii::getPathOfAlias('webroot') . '/images/works/' . $model->img);
@@ -46,19 +49,19 @@ $model = new Works;
                     $model->img = $img;
                 }
 
-                $fileBig = CUploadedFile::getInstance($model, 'img_big');                
-                
+                $fileBig = CUploadedFile::getInstance($model, 'img_big');
+
                 if (!empty($fileBig->name)) {
-                    if (!empty($img_big) && file_exists(Yii::getPathOfAlias('webroot') . '/images/works/big/'.$img_big)){
-                        unlink(Yii::getPathOfAlias('webroot') . '/images/works/big/'.$img_big);
+                    if (!empty($img_big) && file_exists(Yii::getPathOfAlias('webroot') . '/images/works/big/' . $img_big)) {
+                        unlink(Yii::getPathOfAlias('webroot') . '/images/works/big/' . $img_big);
                     }
                     $model->img_big = $id . '_' . $fileBig->name;
                     $fileBig->saveAs(Yii::getPathOfAlias('webroot') . '/images/works/big/' . $model->img_big);
                 } else {
                     $model->img_big = $img_big;
                 }
-                
-                
+
+
                 if (!isset($_POST['yt0'])) {
                     $model->save();
                     Yii::app()->user->setFlash('success', "Работа отредактирована");
@@ -84,47 +87,45 @@ $model = new Works;
         }
     }
 
-    public function actionChangeOrder() {        
+    public function actionChangeOrder() {
         // ('UPDATE notes SET note_order=:note_order WHERE id=:id');
-	//преобразовываем строку в JSON формате в массив объектов
-	$data = json_decode($_POST['neworder']);
-	if (null == $data) {
-		
-	}
-	//обновляем записи
-	foreach ($data as $note) {
-            $model = Works::model()->updateByPk(substr($note->id, 5), array('position'=>($note->order+1)));
-	}
-	//отправляем отчет браузеру
-	echo json_encode(array('status'=>'OK'));
-
-
+        //преобразовываем строку в JSON формате в массив объектов
+        $data = json_decode($_POST['neworder']);
+        if (null == $data) {
+            
+        }
+        //обновляем записи
+        foreach ($data as $note) {
+            $model = Works::model()->updateByPk(substr($note->id, 5), array('position' => ($note->order + 1)));
+        }
+        //отправляем отчет браузеру
+        echo json_encode(array('status' => 'OK'));
     }
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
+    // Uncomment the following methods and override them if needed
+    /*
+      public function filters()
+      {
+      // return the filter configuration for this controller, e.g.:
+      return array(
+      'inlineFilterName',
+      array(
+      'class'=>'path.to.FilterClass',
+      'propertyName'=>'propertyValue',
+      ),
+      );
+      }
 
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
+      public function actions()
+      {
+      // return external action classes, e.g.:
+      return array(
+      'action1'=>'path.to.ActionClass',
+      'action2'=>array(
+      'class'=>'path.to.AnotherActionClass',
+      'propertyName'=>'propertyValue',
+      ),
+      );
+      }
+     */
 }
