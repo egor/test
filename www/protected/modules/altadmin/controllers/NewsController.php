@@ -1,13 +1,29 @@
 <?php
-
+/**
+ * News управление новостями
+ * 
+ * Действия класс. Вывод списка новостей, редактирование, удаление, добавление
+ * Настройка отображения новостей и метатегов главной страницы "Новости"
+ * 
+ * @author Egor Rihnov <egor.developer@gmail.com>
+ * @version 1.0
+ * @package backEnd
+ */
 class NewsController extends Controller {
 
+   /**
+    * Вывод списка новостей
+    */
     public function actionIndex() {
         $this->pageTitle = 'Список новостей | CMS ALTADMIN';
         $news = News::model()->findAll(array('order' => 'date DESC'));
         $this->render('index', array('news' => $news));
     }
 
+    /**
+     * Добавлние новости.
+     * После добавления переадресует на редактирование этой записи
+     */
     public function actionAdd() {
         $news = new News;
         $news->date = time();
@@ -17,6 +33,12 @@ class NewsController extends Controller {
         }
     }
 
+    /**
+     * Редактирование новости
+     * 
+     * @param type $id id новости
+     * @return action
+     */
     public function actionEdit($id = 0) {
         // = $_GET['id'];
         $this->pageTitle = 'Редактирование новости | CMS ALTADMIN';
@@ -66,6 +88,10 @@ class NewsController extends Controller {
         $this->render('edit', array('news' => $model));
     }
 
+    /**
+     * Удалнеи новости
+     * @param type $id - id новости
+     */
     public function actionDelete($id = 0) {
         if (!empty($id)) {
             $model = News::model()->findByPk($id);
