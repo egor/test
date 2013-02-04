@@ -36,7 +36,7 @@ class PagesController extends Controller {
         //echo     Yii::getPathOfAlias('webroot') ;
         if (isset($_POST['Pages'])) {
             $model->attributes = $_POST['Pages'];
-            //$model->date = DateOperations::dateToUnixTime($model->date);
+            $model->date = DateOperations::dateToUnixTime($model->date);
             if ($model->validate()) {
                 $file = CUploadedFile::getInstance($model, 'img');
                 if (!empty($file->name)) {
@@ -75,7 +75,7 @@ class PagesController extends Controller {
                 return;
             }
         }
-        //$model->date = date('d.m.Y', $model->date);
+        $model->date = date('d.m.Y', $model->date);
         //$this->render('edit');
         //$this->render('_form',array('model'=>$model));
         $this->render('edit', array('pages' => $model));
@@ -303,6 +303,7 @@ class PagesController extends Controller {
         //if (isset($_POST['Categorydemo'])) {
         $model = new Pages;
         $model->menu_name = $name;
+        $model->date = time();
         $model->h1 = $name;
         $model->url = Transliteration::ruToLat($name);
         //set the submitted values

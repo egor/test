@@ -17,7 +17,7 @@ class LeftMenuPortlet extends CPortlet
  
     protected function renderContent()
     {
-        $models = Pages::model()->findAll('visibility=:visibility AND level=:level AND pages_id!=:pages_id AND in_menu=:in_menu ORDER BY lft', array(':visibility'=>1, ':level'=>1,  ':pages_id'=>33, ':in_menu'=>1));
+        $models = Pages::model()->findAll('visibility=:visibility AND level=:level AND pages_id!=33 AND pages_id!=85 AND in_menu=:in_menu ORDER BY lft', array(':visibility'=>1, ':level'=>1, ':in_menu'=>1));
         $items = array();
         $counts = count($models);
         $count = 0;
@@ -27,7 +27,7 @@ class LeftMenuPortlet extends CPortlet
             foreach($subModels as $subModel) {
                 
                 $subItem[] = array('label' => $subModel->menu_name, 
-                    'url' =>  '/' . $subModel->url,                 
+                    'url' =>  '/' . $subModel->url,
                     //'itemOptions'=>array('class'=> ($count==1?('first'):($count == $counts ? 'last':''))), 
                     'active'=>'');
                 $subItem[] = array('label' => '', 

@@ -14,7 +14,7 @@ class EditFieldsController extends Controller
                     //$model->save();
                 }
             }
-            $model = EditFields::model()->findAll();            
+            $model = EditFields::model()->findAll(array('order'=>'position'));            
             $this->render('index', array ('model' => $model));
 	}
 

@@ -48,6 +48,7 @@
                 <div class="header-menu-content-left"></div>
 
                 <?php $this->widget('HeaderMenuPortlet'); ?>
+                
                 <div class="header-menu-content-right"></div>
             </div>
         <div class="header-menu-hr"></div>
@@ -62,11 +63,22 @@
                 <div class="content">
                 <div class="left-menu">
                     <?php $this->widget('LeftMenuPortlet'); ?>
-                    <div class="read-blog"><h2><?php echo SelectDataFromEditFields::selectValue('left_blog'); ?></h2>
+                    <div class="left-header-blog">
+                        <?php echo SelectDataFromEditFields::selectValue('left_blog'); ?>
+                    </div>
+                    <?php $this->widget('LeftMenuBlogPortlet'); ?>
+                    <div class="read-blog"><!--<h2><?php echo SelectDataFromEditFields::selectValue('left_blog'); ?></h2>-->
                     <?php 
 //echo SelectDataFromEditFields::selectValue('left_blog_all');
 //echo SelectDataFromEditFields::selectValue('left_blog_link'); ?>
                     </div>
+                    <div class="left-last-info">
+                        <div class="left-last-info-header">
+                            <?php echo SelectDataFromEditFields::selectValue('left_last_info'); ?>
+                        </div>
+                        <?php $this->widget('LeftMenuLastStatPortlet'); ?>
+                    </div>
+                    
                 </div>
                 <div class="site-content"><?php echo $content; ?></div>
                 <div class="right-col">

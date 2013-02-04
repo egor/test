@@ -53,12 +53,12 @@ class Pages extends CActiveRecord {
         // will receive user inputs.
         return array(
             //array('root, lft, rgt, level, url, visibility, in_menu, menu_name, h1, meta_title, meta_keywords, meta_description, short_text, text, img, img_alt, img_title, add_1, add_2', 'required'),
-            array('root, lft, rgt, level, url, visibility, in_menu, menu_name, h1, meta_title, meta_keywords, meta_description, short_text, text, img, img_alt, img_title, add_1, add_2', 'safe'),
-            array('root, lft, rgt, level, visibility, in_menu', 'numerical', 'integerOnly' => true),
+            array('root, lft, rgt, level, url, visibility, in_menu, menu_name, h1, meta_title, meta_keywords, meta_description, short_text, text, img, img_alt, img_title, add_1, add_2, in_last, date', 'safe'),
+            array('root, lft, rgt, level, visibility, in_menu, in_last, date', 'numerical', 'integerOnly' => true),
             array('url, menu_name, h1, img, img_alt, img_title', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('pages_id, root, lft, rgt, level, url, visibility, in_menu, menu_name, h1, meta_title, meta_keywords, meta_description, short_text, text, img, img_alt, img_title, add_1, add_2', 'safe', 'on' => 'search'),
+            array('pages_id, root, lft, rgt, level, url, visibility, in_menu, menu_name, h1, meta_title, meta_keywords, meta_description, short_text, text, img, img_alt, img_title, add_1, add_2, in_last, date', 'safe', 'on' => 'search'),
         );
     }
 
@@ -97,6 +97,8 @@ class Pages extends CActiveRecord {
             'img_title' => 'title (заголовок)',
             'add_1' => 'Add 1',
             'add_2' => 'Add 2',
+            'in_last' => 'Выводить в последних статьях',
+            'date' => 'Дата',
         );
     }
 
@@ -130,6 +132,8 @@ class Pages extends CActiveRecord {
         $criteria->compare('img_title', $this->img_title, true);
         $criteria->compare('add_1', $this->add_1, true);
         $criteria->compare('add_2', $this->add_2, true);
+        $criteria->compare('in_last', $this->in_last, true);
+        $criteria->compare('date', $this->date, true);
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,

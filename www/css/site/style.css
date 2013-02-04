@@ -26,6 +26,9 @@ html
 	font: normal 10pt Arial,Helvetica,sans-serif;
 
 }
+a img{
+    border: none;
+}
 .header{
     background: url(/images/site/header-bg.png) repeat-x;
     width: 1000px;
@@ -161,6 +164,67 @@ html
     width: 225px;
     overflow: hidden;
 }
+.left-header-blog{
+    font-size: 21px;
+    color:#f05d0a;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+.portlet-content ul.left-menu-blog li a{
+    text-decoration: none;
+}
+.portlet-content ul.left-menu-blog li a span{
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #3b3b3b;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+    width: 105px;
+    display: inline-table;
+    vertical-align: top;
+}
+.portlet-content ul.left-menu-blog li{
+    display: inline-table;
+    width: 100px;
+    text-align: right;
+    margin-bottom: 5px;
+}
+.portlet-content ul.left-menu-blog li.left{
+    margin-right: 3px;
+    margin-left: 8px;
+    width: 105px;
+    text-align: right;
+}
+.left-last-info-header{
+    font-size: 21px;
+    color:#f05d0a;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 18px;
+    margin-bottom: 12px;    
+}
+.portlet-content ul.left-menu-last-stat li a span{
+    font-size: 10px;
+    color: #636467;
+}
+.portlet-content ul.left-menu-last-stat li{
+    font-size: 12px;
+    color: #3b3b3b;
+    list-style: none;
+    margin-bottom: 10px;
+    width: 210px;
+}
+.portlet-content ul.left-menu-last-stat li a{
+    text-decoration: none;
+    color: #3b3b3b;
+}
+.portlet-content ul.left-menu-last-stat{
+    margin-left: 10px;
+}
+/*контент*/
 .site-content{
     float: left;
     width: 563px;

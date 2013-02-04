@@ -58,14 +58,22 @@ endif; ?>
                             <?php echo $form->checkBox($pages, 'in_menu'); ?>
                             <?php echo $form->error($pages, 'in_menu'); ?>
                             </fieldset>
-                                    
+<fieldset>
+               <?php echo $form->labelEx($pages, 'in_last'); ?>
+                            <?php echo $form->checkBox($pages, 'in_last'); ?>
+                            <?php echo $form->error($pages, 'in_last'); ?>
+                            </fieldset>                                    
                                 <fieldset>
 							<?php echo $form->labelEx($pages, 'url'); ?>
 							<?php echo $form->textField($pages, 'url'); ?>
                                     <?php echo $form->error($pages, 'url'); ?>
 						</fieldset>
                             
-                        
+                        <fieldset>
+                            <?php echo $form->labelEx($pages, 'date'); ?>
+                            <?php echo $form->textField($pages, 'date', array('id' => 'datepicker')); ?>
+                            <?php echo $form->error($pages, 'date'); ?>
+                            </fieldset>
                         <fieldset>
                         
                             <?php echo $form->labelEx($pages, 'menu_name'); ?>
