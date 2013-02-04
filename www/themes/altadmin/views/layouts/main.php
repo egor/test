@@ -12,9 +12,9 @@
 	<![endif]-->
         
 
-        <script src="/js/altadmin/jquery-1.5.2.min.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
         
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script src="/js/altadmin/jquery-1.5.2.min.js" type="text/javascript"></script>
         <script src="/js/altadmin/jqui1812/js/jquery-ui-1.8.12.custom.min.js"></script>
         
        
