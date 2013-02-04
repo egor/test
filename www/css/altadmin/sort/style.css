@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+ul#sortable.ui-sortable {
+	margin: 1em;
+	list-style: none;
+	padding: 0;
+	padding: 0.5em;
+}
+
+ul#sortable.ui-sortable li {
+	border: solid 1px #aaaaaa;
+	padding: 0.5em;
+	margin: 0.2em;
+	background-color: #eeeeee;
+	text-align: right;
+	clear: both;
+        cursor: move;
+}
+
+ul#sortable.ui-sortable li span.note {
+	float: left;
+}
+
+ul#sortable.ui-sortable li a  img{
+	border: none;
+}

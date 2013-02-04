@@ -1,0 +1,7 @@
+<?php
+    $this->widget('zii.widgets.cMenu',
+            array('items'=>$items, 
+                'id'=>'headerMenuList',                 
+                )
+            );  
+?>

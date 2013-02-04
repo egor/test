@@ -1,0 +1,486 @@
+/* 
+    Document   : style
+    Created on : 29.01.2013, 22:52:09
+    Author     : egorik
+    Description:
+        Purpose of the stylesheet follows.
+*/
+* {
+   margin: 0;
+   padding: 0;
+}
+root { 
+    display: block;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+}
+html
+{
+	margin: 0;
+	padding: 0;
+	
+	font: normal 10pt Arial,Helvetica,sans-serif;
+
+}
+.header{
+    background: url(/images/site/header-bg.png) repeat-x;
+    width: 1000px;
+    margin: 0 auto;
+    height: 152px;
+    
+}
+.header-content{
+    width: 1000px;
+    margin: 0 auto;
+
+}
+.main-logo{
+    padding-top: 8px;
+    padding-left: 10px;
+    overflow: hidden;
+    height: 104px;
+    width: 295px;
+    float: left;
+}
+.main-map{
+    float: left;
+    width: 253px;
+    height: 147px;
+    position: relative;
+    z-index: 10;
+    margin-left: 58px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.header-phone{
+    float: right;
+    width: 370px;
+    height: 150px;
+    overflow: hidden;
+    /*text-align: center;*/
+}
+.header-phone-call-me{
+    margin-top: 16px;
+    margin-left: 33px;
+}
+.header-phone-num{
+    margin-top: 18px;
+    margin-left: 13px;
+}
+.header-hr{
+    background: url(/images/site/header-hr-line.png) repeat-x;
+    height: 4px;
+    width: 100%;
+    position: relative;
+    float: left;
+    margin-top: -32px;
+}
+.hr-menu{
+    width: 100%;
+    height: 1px;
+    float: none;
+}
+.header-menu{    
+    height: 30px;
+    border: 1px solid;
+    overflow: hidden;
+}
+.header-menu-content{
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.header-menu-content-left{
+    background: url(/images/site/header-left-menu.png) no-repeat;
+    float: left;
+    height: 31px;
+    width: 10px;        
+}
+.header-menu-content-right{
+    background: url(/images/site/header-right-menu.png) no-repeat;
+    float: left;
+    height: 31px;
+    width: 5px; 
+}
+.header-work-time{
+    margin-left: 61px;
+    margin-top: 26px;
+}
+.r-part{
+    height: 38px;
+    width: 124px;
+    position: absolute;
+    z-index: 10;
+    margin-top:113px;
+    margin-left: 12px;
+}
+.portlet-content ul#headerMenuList{
+    display: inline-table;
+    background: url(/images/site/header-bg-menu.png) repeat-x;
+    height: 31px;
+    width: 985px;
+    float: left;
+}
+.portlet-content ul#headerMenuList li{
+    display: inline-table;
+    font-size: 13px;
+    color: #626366;
+    padding-top: 10px;
+    width: 160px;
+    text-align: center;
+}
+.portlet-content ul#headerMenuList li.last{
+    width: 160px;
+}
+.portlet-content ul#headerMenuList li a{
+    font-size: 13px;
+    color: #626366;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header-menu-hr{
+    background: url(/images/site/header-b-menu.jpg) no-repeat;
+    width: 1000px;
+    height: 8px;
+    margin: 0 auto;
+}
+
+.content{
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.left-menu{
+    float: left;
+    width: 225px;
+    overflow: hidden;
+}
+.site-content{
+    float: left;
+    width: 563px;
+    overflow: hidden;
+    border-left: 1px solid #d7d7d8;
+    border-right: 1px solid #d7d7d8;
+}
+#content{
+    margin-left: 16px;
+}
+.portlet-content ul#leftMenuList li span{
+    font: normal 15px Arial,Helvetica,sans-serif;
+    color:#636467;
+    font-weight: bold;
+    font-size: 15px;
+}
+.portlet-content ul#leftMenuList li ul li{
+    background: url(/images/site/left-li.jpg) 0 6px no-repeat;
+    padding-left: 10px;  
+    
+    list-style: none;
+    margin-top: 11px;
+    /*background-position: 4px 0 0 4px;*/
+}
+.portlet-content ul#leftMenuList li ul li a{
+    font-size: 12px;
+    color: #636467;
+    text-decoration: none;
+}
+.left-menu-li-hr{
+    background: url(/images/site/left-menu-li-hr.jpg) no-repeat;
+    width: 201px;
+    height: 1px;
+}
+
+.portlet-content ul#leftMenuList li ul li.left-menu-li-hr{
+    background: url(/images/site/left-menu-li-hr.jpg) no-repeat;
+    list-style: none;
+    margin-top: 0px;
+    margin-left: 14px;
+}
+.portlet-content ul#leftMenuList{
+    margin-left: 20px;
+    list-style: none;
+    margin-left: 9px;
+    margin-top: 7px;
+}
+.portlet-content ul#leftMenuList li.inner{
+    margin-top: 15px;
+}
+.portlet-content ul#leftMenuList li.last{
+    margin-top: 15px;
+}
+.read-blog h2{
+    font-size: 21px;
+    font-weight: bold;
+    color: #f05d0a;
+    margin-top: 30px;
+}
+.breadcrumbs{
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #636467;
+    padding-left: 20px;
+}
+.breadcrumbs a{   
+    font-size: 10px;
+    color: #636467;
+}
+.breadcrumb-separator{
+    background: url(/images/site/breadcrumbs.jpg) no-repeat;
+    height: 7px;
+    width: 8px;
+    display: inline-table;
+}
+
+h1 {
+    font: normal 20px Arial,Helvetica,sans-serif;
+    color:#f05d0a;
+    font-size: 20px;
+    font-weight: bold;
+}
+.right-col{
+    float: left;
+    width: 205px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+.right-banners{
+    float: left;
+    margin-bottom: 10px;
+}
+.right-pad{
+    margin-top: 10px;
+}
+.consultant{
+    float: left;
+    width: 205px;
+}
+.consultant-header{
+    width: 100%;
+    font-size: 21px;
+    color: #f05d0a;
+    text-align: center;
+}
+.consultant-foto{
+    width: 100%;
+    text-align: center;
+}
+.consultant-name{
+    font-size: 16px;
+    color: #49414c;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.right-call{
+    float: left;
+    width: 205px;
+}
+.right-call-header{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #f05d0a;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 11px;
+}
+.right-call-phone{
+    font-size: 16px;
+    color: #49414c;
+    font-weight: bold;
+    height: 35px;
+    margin-left: 10px;
+}
+.right-call-phone-ico{
+     
+}
+.right-call-phone span{
+    display: inline-table;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+
+/* footer */
+.footer-sep{
+    
+    width: 1000px;
+    margin: 0 auto;
+    height: 5px;
+    background: url(/images/site/footer-sep.jpg) repeat-x;
+    margin-top: 5px;
+}
+.footer{
+    width: 1000px;
+    margin: 0 auto;
+    height: 222px;
+    background: url(/images/site/footer-bg.jpg) repeat-x;
+}
+.footer-left-logo{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.footer-left{
+    float: left;
+    width: 250px;
+    overflow: hidden;    
+}
+.footer-right{
+    float: left;
+    width: 750px;
+    overflow: hidden;
+}
+.footer-left-phone{
+    margin-left: 21px;
+    margin-top: 15px;
+}
+.portlet-content ul#footerMenuList {
+    display: inline-table;
+}
+.portlet-content ul#footerMenuList li {
+    display: inline-table;
+    color: #626366;
+    font-size: 12px;
+    font: normal 10pt Tahoma,Arial,Helvetica,sans-serif;
+    width: 120px;
+    
+}
+.portlet-content ul#footerMenuList li a{
+    color: #626366;
+    font-size: 12px;
+    font: normal 10pt Tahoma,Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.portlet-content ul#footerMenuList li a:hover{
+    text-decoration: underline;
+}
+.footer-right-menu{
+    margin-top: 6px;
+}
+.footer-call-phone-ico{
+    
+}
+.footer-left-phone table tbody tr td span{
+    font-size: 17px;
+    color: #1304a2;
+    margin-left: 4px;
+    display: inline-table;
+}
+.footer-left-work-time{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.footer-right-slogan{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.footer-right-slogan-header{
+    font-size: 13px;
+    color: #3a3a3a;
+    text-transform: uppercase;
+}
+.footer-right-slogan-text{
+    font-size: 13px;
+    color:#6b6c6f;
+    margin-top: 5px;
+    height: 61px;
+    overflow: hidden;
+}
+.footer-right table tbody tr td span.soc{
+    color: #1304a2;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-table;
+    
+}
+.footer-facebook{
+    margin-left: 7px;
+}
+.footer-youtube{
+    margin-left: 6px;
+}
+.footer-vk{
+    margin-left: 8px;
+}
+.footer-ok{
+    margin-left: 7px;
+}
+.footer-twitter{
+    margin-left: 7px;
+    
+}
+.cos-t{
+    margin-left: 20px;
+}
+.footer-copy{
+    display: inline-table;
+    margin-top: 10px;
+    color: #ffffff;
+}
+.footer-map-img{
+    margin-top: 27px;
+    margin-left: 26px;
+    float: left;
+}
+.footer-map-text{
+    float: left;
+    margin-left: 80px;
+    margin-top: 62px;
+    position: absolute;
+}
+.footer-map-text a{
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+/*news*/
+.news_list div.news-item h2{
+    color:#3b3b3b;
+    font-size: 15px;
+    /*float: left;*/
+    text-decoration: none;
+}
+.news_list div.news-item a{
+    text-decoration: none;
+    
+}
+/*.news_list div.news-item span.news-item-date {*/
+.news_list div.news-item div.news-item-date{
+    float: left;
+    font-size: 14px;
+    color:#636467;
+}
+.news_list div.news-item div.mews-item-short-text{
+    font-size: 12px;
+}
+.news_list div.news-item a.more {
+    color: #636467;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: right;
+}
+html body div.content div.site-content div#content div.news_list div.news-item h2 a.list-header{
+    
+}
+.news_list div.news-item h2{
+    
+}
+.news_list div.news-item div.news-item-date{
+    float: left;
+    height: 18px;
+    
+    width: 85px;
+    overflow: hidden;
+}
